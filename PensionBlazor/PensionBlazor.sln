@@ -22,6 +22,21 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pension.Data.Contracts", "Pension.Data.Contracts\Pension.Data.Contracts.csproj", "{88AA3F48-4C62-4638-8084-023B3669808E}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Postman", "Postman", "{4547887B-7B6B-4EE6-AAD6-C893A556C071}"
+	ProjectSection(SolutionItems) = preProject
+		Postman\Pension.postman_collection.json = Postman\Pension.postman_collection.json
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "JsonData", "JsonData", "{AA28ECE1-0950-438D-8B55-FEA0F537294A}"
+	ProjectSection(SolutionItems) = preProject
+		JsonData\average_2003_2025.txt = JsonData\average_2003_2025.txt
+		JsonData\avgsal.csv = JsonData\avgsal.csv
+		JsonData\PensionData.json = JsonData\PensionData.json
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SqlScript", "SqlScript", "{0721DADC-553B-4D34-8E90-552B2D9292F1}"
+	ProjectSection(SolutionItems) = preProject
+		SqlScript\script.sql = SqlScript\script.sql
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
