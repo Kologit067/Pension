@@ -36,6 +36,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SqlScript", "SqlScript", "{0721DADC-553B-4D34-8E90-552B2D9292F1}"
 	ProjectSection(SolutionItems) = preProject
 		SqlScript\script.sql = SqlScript\script.sql
+		UserLogin.sql = UserLogin.sql
 	EndProjectSection
 EndProject
 Global
