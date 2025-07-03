@@ -1,4 +1,10 @@
-using PensionBlazor.Client.Pages;
+using System;
+using Microsoft.AspNetCore.DataProtection.KeyManagement;
+using Pension.Data.Contracts;
+using Pension.Data.Contracts.Interfactes;
+using Pension.Data.Implementation;
+using Pension.Service.Contracts.Interfaces;
+using Pension.Service.Implementations;
 using PensionBlazor.Components;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -8,6 +14,18 @@ builder.Services.AddRazorComponents()
     .AddInteractiveServerComponents()
     .AddInteractiveWebAssemblyComponents();
 
+builder.Services.AddScoped<IAverageSalaryRepository, AverageSalaryRepository>();
+builder.Services.AddScoped<IPersonSalaryRepository, PersonSalaryRepository>();
+builder.Services.AddScoped<IAverageSalaryService, AverageSalaryService>();
+builder.Services.AddScoped<IPersonSalaryService, PersonSalaryService>();
+
+
+ConfigurationManager configurationManager = builder.Configuration;
+IConfigurationSection connectionStringsSection = configurationManager.GetSection("ConnectionStrings");
+builder.Services.Configure<ConnectionStrings>(connectionStringsSection);
+
+builder.Services.AddHttpClient();
+builder.Services.AddControllers();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -26,6 +44,10 @@ app.UseHttpsRedirection();
 
 app.UseStaticFiles();
 app.UseAntiforgery();
+
+app.MapControllerRoute(
+    name: "default",
+    pattern: "api/{controller=Home}/{action=Index}/{id?}");
 
 app.MapRazorComponents<App>()
     .AddInteractiveServerRenderMode()

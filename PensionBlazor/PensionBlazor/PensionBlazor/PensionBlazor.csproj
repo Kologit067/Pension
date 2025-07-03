@@ -7,6 +7,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\Pension.Data.Contracts\Pension.Data.Contracts.csproj" />
+    <ProjectReference Include="..\..\Pension.Data\Pension.Data.csproj" />
+    <ProjectReference Include="..\..\Pension.Service.Contracts\Pension.Service.Contracts.csproj" />
+    <ProjectReference Include="..\..\Pension.Service\Pension.Service.csproj" />
     <ProjectReference Include="..\PensionBlazor.Client\PensionBlazor.Client.csproj" />
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.Server" Version="8.0.4" />
   </ItemGroup>
